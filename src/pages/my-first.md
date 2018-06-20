@@ -1,15 +1,8 @@
 ---
-title: "Sweet Pandas Eating Sweets"
-date: "2017-08-10"
+path: pandas-sweet
+date: '2017-08-12'
+title: Sweet Pandas Eating Sweets
 ---
-
-Pandas are really sweet.
-gfjgc
-gdkljfakjed
-edakjfald'
-aDBAZF'ASSDX[Kkbj]
-Here's a video of a panda eating sweets.
-
 ```javascript
 import React from 'react'
 import Link from 'gatsby-link'
@@ -26,5 +19,6 @@ const IndexPage = () => (
 export default IndexPage
 ```
 
-# King dude
-*hello brothers*
+# 
+
+_hello brothers_
