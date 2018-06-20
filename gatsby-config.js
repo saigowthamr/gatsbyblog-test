@@ -11,7 +11,14 @@ module.exports = {
         name: 'src',
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/img`,
+        name: 'images',
+      },
+    },
+      `gatsby-transformer-remark`,
     'gatsby-plugin-netlify-cms',
   ],
 }
