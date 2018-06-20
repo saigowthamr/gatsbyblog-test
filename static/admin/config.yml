@@ -1,0 +1,15 @@
+backend:
+  name: github
+  repo: saigowthamr/gatsbyblog-test #replace with your username/repo
+
+media_folder: static/img
+public_folder: /img
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: src/pages
+    create: true
+    fields:
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
