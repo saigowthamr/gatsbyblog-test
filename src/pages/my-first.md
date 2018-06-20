@@ -3,9 +3,6 @@ path: pandas-sweet
 date: '2017-08-12'
 title: Sweet Pandas Eating Sweets
 ---
-Pandas are really sweet.
-
-
 ```javascript
 import React from 'react'
 import Link from 'gatsby-link'
