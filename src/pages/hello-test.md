@@ -1,8 +1,8 @@
 ---
-title: Hello test
 date: '2018-06-20'
-description: The Coffee Taster’s Flavor Wheel, the officia
-thumbnail: dddd
+title: Hello test
+description: 'The Coffee Taster’s Flavor Wheel, the officia'
+thumbnail: /img/conf.png
 ---
 loremdjd
 
