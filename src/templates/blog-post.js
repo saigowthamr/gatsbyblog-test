@@ -18,17 +18,13 @@ export default props => {
             property: 'og:image',
             content:
               post.frontmatter.thumbnail &&
-              props.data.site.siteMetadata.url +
-                '/' +
-                post.frontmatter.thumbnail,
+              props.data.site.siteMetadata.url +post.frontmatter.thumbnail,
           },
           {
             property: 'twitter:image',
             content:
               post.frontmatter.thumbnail &&
-              props.data.site.siteMetadata.url +
-                '/' +
-                post.frontmatter.thumbnail,
+              props.data.site.siteMetadata.url +post.frontmatter.thumbnail,
           },
           { name: 'twitter:card', content: 'summary_large_image' },
         ]}
