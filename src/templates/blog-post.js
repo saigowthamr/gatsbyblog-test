@@ -7,11 +7,13 @@ export default ({ data }) => {
     <div>
       <Helmet
         title={post.frontmatter.title}
-        meta={[{ name: 'description', content: post.frontmatter.description }]}
+        meta={[{ name: 'description', content: post.frontmatter.description },
+          { name: "og:image", content: post.frontmatter.thumbnail && post.frontmatter.thumbnail}
+        ]}
       />
 
       <h1>{post.frontmatter.title}</h1>
-      <img src={post.frontmatter.thumbnail} />
+      <img src={post.frontmatter.thumbnail && post.frontmatter.thumbnail} />
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <h1>hello dude</h1>
     </div>
