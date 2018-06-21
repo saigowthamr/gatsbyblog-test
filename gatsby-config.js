@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default',
-    url: 'https://gowtham.netlify.com/',
+    url: 'https://gowtham.netlify.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
