@@ -1,8 +1,16 @@
 ---
-path: pandas-sweet
-date: '2017-08-12'
 title: Sweet Pandas Eating Sweets
+date: '2017-08-12'
+description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
+thumbnail: 'dddd'
 ---
+
+
+
+<script
+src="https://gist.github.com/saigowthamr/df3a0585268e8623c8078923601ad9d9"  ></script>
+
+
 ```javascript
 import React from 'react'
 import Link from 'gatsby-link'
@@ -15,10 +23,16 @@ const IndexPage = () => (
     <Link to="/page-2/">Go to page 2</Link>
   </div>
 )
-
-export default IndexPage
 ```
 
-# 
+<script type="text/javascript">
+var t = 3;
+function test() {
+        console.log("t = " + t);
+}
+</script>
+
+
+#
 
 _hello brothers_

@@ -1,15 +1,22 @@
-import React from "react";
+import React from 'react'
+import Helmet from 'react-helmet'
 
 export default ({ data }) => {
-    const post = data.markdownRemark;
-    return (
-        <div>
-            <h1>{post.frontmatter.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <h1>hello dude</h1>
-        </div>
-    );
-};
+  const post = data.markdownRemark
+  return (
+    <div>
+      <Helmet
+        title={post.frontmatter.title}
+        meta={[{ name: 'description', content: post.frontmatter.description }]}
+      />
+
+      <h1>{post.frontmatter.title}</h1>
+      <img src={post.frontmatter.thumbnail} />
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <h1>hello dude</h1>
+    </div>
+  )
+}
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
@@ -17,7 +24,9 @@ export const query = graphql`
       html
       frontmatter {
         title
+        description
+        thumbnail
       }
     }
   }
-`;
+`
