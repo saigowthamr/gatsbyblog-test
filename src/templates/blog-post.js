@@ -33,7 +33,6 @@ export default props => {
           { name: 'twitter:card', content: 'summary_large_image' },
         ]}
       />
-      {console.log('public url: ', process.env.PUBLIC_URL)}
       <h1>{post.frontmatter.title}</h1>
       <img src={post.frontmatter.thumbnail && post.frontmatter.thumbnail} />
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
