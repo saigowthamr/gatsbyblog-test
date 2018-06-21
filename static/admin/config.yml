@@ -12,6 +12,6 @@ collections:
     fields:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
-      - {name:description,label:Description,widget: "text"}
+      - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - { name: body, label: Body, widget: markdown }
