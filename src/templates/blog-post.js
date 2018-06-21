@@ -8,7 +8,9 @@ export default ({ data }) => {
       <Helmet
         title={post.frontmatter.title}
         meta={[{ name: 'description', content: post.frontmatter.description },
-          { name: "og:image", content: post.frontmatter.thumbnail && post.frontmatter.thumbnail}
+          { property: "og:url", content: location.href},
+          { name: "twitter:card", content:"summary_large_image"} ,
+          { property: "og:image", content: post.frontmatter.thumbnail && post.frontmatter.thumbnail}
         ]}
       />
 
