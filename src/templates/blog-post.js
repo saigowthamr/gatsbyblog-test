@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 
 export default ({ data }) => {
   const post = data.markdownRemark
+  const location = window.location
   return (
     <div>
       <Helmet
