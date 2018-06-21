@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default',
+    url: 'https://gowtham.netlify.com/',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -19,6 +20,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    'gatsby-plugin-netlify-cms'
+    'gatsby-plugin-netlify-cms',
   ],
 }

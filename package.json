@@ -11,6 +11,7 @@
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
+    "netlify": "^1.2.0",
     "netlify-cms": "^1.9.2",
     "react-helmet": "^5.2.0"
   },
