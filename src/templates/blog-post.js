@@ -9,7 +9,14 @@ export default props => {
       <Helmet
         title={post.frontmatter.title}
         meta={[
+          { name: 'title', content: post.frontmatter.title },
+
           { name: 'description', content: post.frontmatter.description },
+          ,
+          {
+            name: 'og:title',
+            content: post.frontmatter.title,
+          },
           {
             property: 'og:url',
             content: props.data.site.siteMetadata.url + props.location.pathname,
@@ -27,17 +34,17 @@ export default props => {
           },
           {
             property: 'og:description',
-            content: post.frontmatter.description
+            content: post.frontmatter.description,
           },
           {
             name: 'twitter:description',
-            content: post.frontmatter.description
+            content: post.frontmatter.description,
           },
           {
             name: 'twitter:image:src',
-            content: post.frontmatter.thumbnail &&
+            content:
+              post.frontmatter.thumbnail &&
               props.data.site.siteMetadata.url + post.frontmatter.thumbnail,
-
           },
 
           {
@@ -77,7 +84,7 @@ export const query = graphql`
         title
         description
         thumbnail
-        date(formatString: "DD MMMM, YYYY")
+        date(formatString:"LLL")
       }
     }
     site {
