@@ -14,7 +14,7 @@ export default props => {
           { name: 'description', content: post.frontmatter.description },
           ,
           {
-            name: 'og:title',
+            property: 'og:title',
             content: post.frontmatter.title,
           },
           {
