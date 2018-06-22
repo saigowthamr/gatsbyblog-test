@@ -27,11 +27,8 @@ export default props => {
             content:
               post.frontmatter.thumbnail &&
               props.data.site.siteMetadata.url + post.frontmatter.thumbnail,
-          },
-          {
-            property: 'fb:app_id',
-            content: '277289552818368',
-          },
+          }
+          ,
           {
             property: 'og:description',
             content: post.frontmatter.description,
