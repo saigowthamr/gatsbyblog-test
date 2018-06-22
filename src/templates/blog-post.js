@@ -31,7 +31,7 @@ export default props => {
             name: 'twitter:image:src',
             content: post.frontmatter.thumbnail &&
               props.data.site.siteMetadata.url + post.frontmatter.thumbnail,
-          }
+          },
           { name: 'twitter:card', content: 'summary_large_image' },
         ]}
       />
