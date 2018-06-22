@@ -1,8 +1,10 @@
 ---
-title: Sweet Pandas Eating Sweets
 date: '2017-08-12'
-description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
-thumbnail: 'dddd'
+title: Sweet Pandas Eating Sweets
+description: >-
+  The Coffee Taster’s Flavor Wheel, the official resource used by coffee
+  tasters, has been revised for the first time this year.
+thumbnail: /img/conf.png
 ---
 
 
