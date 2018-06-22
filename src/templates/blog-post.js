@@ -22,7 +22,7 @@ export default props => {
               props.data.site.siteMetadata.url + post.frontmatter.thumbnail,
           },
           {
-            property: 'twitter:image',
+            name: 'twitter:image',
             content:
               post.frontmatter.thumbnail &&
               props.data.site.siteMetadata.url + post.frontmatter.thumbnail,
