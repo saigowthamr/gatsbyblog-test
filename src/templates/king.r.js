@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
 const NavLink = props => {
-  console.log(props)
+
   if (!props.test) {
     return <Link to={props.url}>{props.text}</Link>
   } else {
@@ -12,7 +12,6 @@ const NavLink = props => {
 }
 
 const IndexPages = ({ data, pathContext }) => {
-  console.log(pathContext)
   const { group, index, first, last, pageCount } = pathContext
   const previousUrl = index - 1 == 1 ? '' : (index - 1).toString()
   const nextUrl = (index + 1).toString()
