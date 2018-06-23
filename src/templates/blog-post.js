@@ -2,10 +2,12 @@ import React from 'react'
 import createHistory from 'history/createBrowserHistory'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
+
+
+import Image from '../components/Image'
 import './blog-post.css'
 
 export default props => {
-  console.log(props);
   const post = props.data.markdownRemark
   const { next, prev } = props.pathContext
   return (
@@ -82,7 +84,10 @@ export default props => {
           </a>
         </div>
 
-        {post.frontmatter.thumbnail && <img src={post.frontmatter.thumbnail} />}
+        {post.frontmatter.thumbnail && (
+          <Image all={post.frontmatter.thumbnail} />
+        )}
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
         <ul
@@ -143,12 +148,12 @@ export const query = graphql`
         date(formatString: "MMM Do")
       }
     }
+
     site {
       siteMetadata {
         url
         author
       }
     }
-
-    }
+  }
 `

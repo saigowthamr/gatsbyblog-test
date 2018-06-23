@@ -5,7 +5,6 @@ import './blog.css'
 
 const SecondPage = props => {
   const data = props.data
-  console.log(props);
   return (
     <div>
       <Helmet
