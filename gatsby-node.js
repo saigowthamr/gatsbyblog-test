@@ -30,7 +30,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               fields {
                 slug
               }
-              html
               excerpt
               timeToRead
             }
@@ -45,13 +44,17 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         pageLength: 5,
         pathPrefix: 'posts',
       })
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      const posts = result.data.allMarkdownRemark.edges;
+
+      result.data.allMarkdownRemark.edges.forEach(({ node },index) => {
         createPage({
           path: node.fields.slug,
           component: path.resolve(`./src/templates/blog-post.js`),
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug,
+            prev: index === 0 ? null : posts[index - 1].node,
+            next: index === posts.length - 1 ? null : posts[index + 1].node,
           },
         })
       })

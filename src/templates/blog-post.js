@@ -1,9 +1,12 @@
 import React from 'react'
 import createHistory from 'history/createBrowserHistory'
 import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
 
 export default props => {
+  console.log(props)
   const post = props.data.markdownRemark
+  const { next, prev} = props.pathContext
   return (
     <div>
       <Helmet
@@ -28,6 +31,12 @@ export default props => {
               post.frontmatter.thumbnail &&
               props.data.site.siteMetadata.url + post.frontmatter.thumbnail,
           },
+          {
+            property: "og:image:width", content: "1200"
+          },
+
+          {property:"og:image:height", content:"630" },
+
           {
             property: 'og:description',
             content: post.frontmatter.description,
@@ -66,9 +75,21 @@ export default props => {
       />
       <h1>{post.frontmatter.title}</h1>
 
-      { post.frontmatter.thumbnail && <img src={post.frontmatter.thumbnail} />}
+      {post.frontmatter.thumbnail && <img src={post.frontmatter.thumbnail} />}
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <h1>hello dude</h1>
+      <p>
+        {prev && (
+          <Link to={prev.fields.slug}>
+            Previous: {prev.frontmatter.title}
+          </Link>
+        )}
+      </p>
+      <p>
+        {next && (
+          <Link to={next.fields.slug}>Next: {next.frontmatter.title}</Link>
+        )}
+      </p>
     </div>
   )
 }
