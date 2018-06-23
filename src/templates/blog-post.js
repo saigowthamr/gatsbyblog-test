@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 
 export default props => {
-  console.log(props)
+
   const post = props.data.markdownRemark
   const { next, prev} = props.pathContext
   return (
@@ -30,13 +30,8 @@ export default props => {
             content:
               post.frontmatter.thumbnail &&
               props.data.site.siteMetadata.url + post.frontmatter.thumbnail,
-          },
-          {
-            property: "og:image:width", content: "1200"
-          },
-
-          {property:"og:image:height", content:"630" },
-
+          }
+,
           {
             property: 'og:description',
             content: post.frontmatter.description,
