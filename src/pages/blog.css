@@ -1,15 +1,14 @@
 .posts{
-  box-shadow: 2px 3px 0rem 0px #606261;
+  box-shadow:  1px 3px 2px #000000;
     padding: 1rem;
-    border: 1px solid;
     cursor: pointer;
+    margin: 0 auto;
+    border: 1px solid;
+    transition: all .2s;
 }
 
 .posts:hover{
-    background-color: rgba(255, 253, 253, 0.918);
+
+    box-shadow:0 10px 10px;
 }
 
-img{
-    width: 100%;
-
-}

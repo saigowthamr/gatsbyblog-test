@@ -31,7 +31,7 @@ const SecondPage = props => {
           </ul>
         </Link>
       ))}
-      <button>Older Posts</button>
+
     </div>
   )
 }
