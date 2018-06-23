@@ -2,13 +2,13 @@ import React from 'react'
 import createHistory from 'history/createBrowserHistory'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
+import './blog-post.css'
 
 export default props => {
-
   const post = props.data.markdownRemark
-  const { next, prev} = props.pathContext
+  const { next, prev } = props.pathContext
   return (
-    <div>
+    <div className="main-body">
       <Helmet
         title={post.frontmatter.title}
         meta={[
@@ -30,8 +30,7 @@ export default props => {
             content:
               post.frontmatter.thumbnail &&
               props.data.site.siteMetadata.url + post.frontmatter.thumbnail,
-          }
-,
+          },
           {
             property: 'og:description',
             content: post.frontmatter.description,
@@ -49,7 +48,7 @@ export default props => {
 
           {
             rel: 'author',
-            href: 'https://twitter/@saigowthamr',
+            href: 'https://twitter/saigowthamr',
           },
           { property: 'author', content: 'Sai gowtham' },
           { property: 'og:type', content: 'article' },
@@ -69,15 +68,43 @@ export default props => {
         ]}
       />
       <h1>{post.frontmatter.title}</h1>
+      <div className="date-time">
+        <span>{post.frontmatter.date} </span>
+        <span>{post.timeToRead} min read.</span>
+      </div>
+      <div>
+        by&nbsp;
+        <a href="https://twitter.com/saigowthamr">
+          {props.data.site.siteMetadata.author}
+        </a>
+      </div>
 
       {post.frontmatter.thumbnail && <img src={post.frontmatter.thumbnail} />}
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      <h1>hello dude</h1>
+
+      <ul style={{display:"flex",justifyContent:"center",listStyle:"none"}}>
+        <li style={{marginRight:"4px"}}>
+          <a
+            href={`https://www.facebook.com/sharer/sharer.php?u=${props.data
+              .site.siteMetadata.url + props.location.pathname}`}
+            target="blank"
+          >
+            fb
+          </a>
+        </li>
+        <li>
+          <a
+            href={`https://twitter.com/intent/tweet?url=${props.data.site
+              .siteMetadata.url + props.location.pathname}&text=${post.frontmatter.title} by @saigowthamr`}
+            target="blank">
+            twitter
+          </a>
+        </li>
+      </ul>
+
       <p>
         {prev && (
-          <Link to={prev.fields.slug}>
-            Previous: {prev.frontmatter.title}
-          </Link>
+          <Link to={prev.fields.slug}>Previous: {prev.frontmatter.title}</Link>
         )}
       </p>
       <p>
@@ -93,16 +120,18 @@ export const query = graphql`
   query BlogPostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      timeToRead
       frontmatter {
         title
         description
         thumbnail
-        date(formatString: "LLL")
+        date(formatString: "MMM Do")
       }
     }
     site {
       siteMetadata {
         url
+        author
       }
     }
   }
