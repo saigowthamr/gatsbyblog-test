@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-
+require('prismjs/themes/prism-twilight.css')
 import Header from '../components/header'
 import './index.css'
 

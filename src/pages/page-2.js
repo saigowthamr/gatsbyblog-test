@@ -1,39 +1,37 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Helmet from 'react-helmet';
-const SecondPage = ({ data }) => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+import Helmet from 'react-helmet'
+import './blog.css'
 
+const SecondPage = props => {
+  const data = props.data
+  console.log(props);
+  return (
+    <div>
       <Helmet
-        title='Blog posts'
+        title="Blog posts"
         meta={[
-          { name: 'description', content:'Blog for javascript webdevlopment' },
+          { name: 'description', content: 'Blog for javascript webdevlopment' },
         ]}
       />
       <h1>Number of posts{data.allMarkdownRemark.totalCount}</h1>
-      <div>
-        {data.allMarkdownRemark.edges.map(({ node }, i) => (
-          <ul key={i}>
-            <Link
-              to={node.fields.slug}
-              style={{ textDecoration: `none`, color: `inherit` }}
-            >
-              <h3>{node.frontmatter.date}</h3>
-
-              <h1>
-                {node.frontmatter.title} Time to Read {node.timeToRead}min
-              </h1>
-              <p>{node.excerpt}</p>
-            </Link>
+      {data.allMarkdownRemark.edges.map(({ node }, i) => (
+        <Link
+          key={i}
+          to={node.fields.slug}
+          style={{ textDecoration: `none`, color: `inherit` }}
+        >
+          <ul className="posts">
+            <h1>{node.frontmatter.title}</h1>
+            <span>
+              {node.frontmatter.date} &nbsp;
+              {node.timeToRead}min read
+            </span>
+            <p>{node.excerpt}</p>
           </ul>
-        ))}
-      </div>
+        </Link>
+      ))}
+      <button>Older Posts</button>
     </div>
   )
 }

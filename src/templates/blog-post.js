@@ -27,8 +27,7 @@ export default props => {
             content:
               post.frontmatter.thumbnail &&
               props.data.site.siteMetadata.url + post.frontmatter.thumbnail,
-          }
-          ,
+          },
           {
             property: 'og:description',
             content: post.frontmatter.description,
@@ -66,7 +65,8 @@ export default props => {
         ]}
       />
       <h1>{post.frontmatter.title}</h1>
-      <img src={post.frontmatter.thumbnail && post.frontmatter.thumbnail} />
+
+      { post.frontmatter.thumbnail && <img src={post.frontmatter.thumbnail} />}
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <h1>hello dude</h1>
     </div>
@@ -81,7 +81,7 @@ export const query = graphql`
         title
         description
         thumbnail
-        date(formatString:"LLL")
+        date(formatString: "LLL")
       }
     }
     site {
