@@ -28,7 +28,7 @@ const IndexPages = ({ data, pathContext }) => {
             },
           ]}
         />
-        <h1>Number of pages{pageCount}</h1>
+
         {group.map(({ node }, i) => (
           <Link
             key={i}
@@ -54,7 +54,7 @@ const IndexPages = ({ data, pathContext }) => {
         />
       </div>
       <div className="nextLink">
-        <NavLink test={last} url={'/posts/' + nextUrl} text="Go to Next Page" />
+        <NavLink test={last} url={'/posts/' + nextUrl} text={last ? null:"Next page"} />
       </div>
     </div>
   )

@@ -85,18 +85,12 @@ export default props => {
         </div>
 
         {post.frontmatter.thumbnail && (
-          <Image all={post.frontmatter.thumbnail} />
+          <Image all={post.frontmatter.thumbnail} text={post.frontmatter.title.trim(5)} />
         )}
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
-        <ul
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            listStyle: 'none',
-          }}
-        >
+        <ul className="social">
           <li style={{ marginRight: '4px' }}>
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${props.data
@@ -114,7 +108,7 @@ export default props => {
               } by @saigowthamr`}
               target="blank"
             >
-              twitter
+              <img src="../img/twitter.png" alt="twitter"  />
             </a>
           </li>
         </ul>

@@ -44,3 +44,9 @@ font-size: 21px;
   text-decoration: none;
   color: white;
 }
+
+.social{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
