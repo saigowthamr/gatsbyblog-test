@@ -8,8 +8,6 @@ thumbnail: /img/f.png
 ---
 
 
-<script
-src="https://gist.github.com/saigowthamr/df3a0585268e8623c8078923601ad9d9"  ></script>
 
 
 ```javascript
@@ -26,14 +24,3 @@ const IndexPage = () => (
 )
 ```
 
-<script type="text/javascript">
-var t = 3;
-function test() {
-        console.log("t = " + t);
-}
-</script>
-
-
-#
-
-_hello brothers_
