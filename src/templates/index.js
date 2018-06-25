@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import Pagination from '../components/pagination';
+
+
 const NavLink = props => {
 
   if (!props.test) {

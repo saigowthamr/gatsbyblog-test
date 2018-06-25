@@ -41,7 +41,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         edges: result.data.allMarkdownRemark.edges,
         createPage: createPage,
         pageTemplate: './src/templates/index.js',
-        pageLength: 7,
+        pageLength: 5,
         pathPrefix: '',
       })
       const posts = result.data.allMarkdownRemark.edges;
