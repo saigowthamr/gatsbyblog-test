@@ -2,7 +2,7 @@
 date: '2018-06-20'
 title: for in loop vs for of loop
 description: for in loop vs for of loop
-thumbnail: /img/icons8.png
+thumbnail: /img/ss.jpg
 ---
 **In JavaScript, We are using for loops to iterate the values/elements from arrays and  also helps to run some code inside the block until the given condition fails.**
 
