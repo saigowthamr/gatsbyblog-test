@@ -2,7 +2,7 @@
 date: '2018-06-20'
 title: How to Build your First Offline Webpage
 description: 'The Coffee Taster’s Flavor Wheel, the officia'
-thumbnail: /img/icons8.png
+thumbnail: /img/actor-1807557_960_720.jpg
 ---
 **Today we are building our First Offline Web page with the Help of Service Workers.**
 
