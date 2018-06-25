@@ -1,6 +1,6 @@
-# gatsby-blog test with Cms
-.
+# Gatsby-blog  with Cms
 
+![](https://github.com/saigowthamr/gatsbyblog-test/blob/master/src/img/gg.gif)
 
 ## Install
 
@@ -11,12 +11,12 @@ npm install --global gatsby-cli
 
 And run from your CLI:
 ```sh
-gatsby new gatsby-example-site
+git clone git@github.com:saigowthamr/gatsbyblog-test.git
 ```
 
 Then you can run it by:
 ```sh
-cd gatsby-example-site
+cd gatsbyblog-test
 gatsby develop
 ```
 
