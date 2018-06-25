@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-
+import Pagination from '../components/pagination';
 const NavLink = props => {
 
   if (!props.test) {
@@ -46,19 +46,14 @@ const IndexPages = ({ data, pathContext }) => {
           </Link>
         ))}
       </div>
-      <div className="previousLink">
-        <NavLink
-          test={first}
-          url={'/posts/' + previousUrl}
-          text={first ? null : "Go to Previous Page"}
-        />
-      </div>
-      <div className="nextLink">
-        <NavLink test={last} url={'/posts/' + nextUrl} text={last ? null:"Next page"} />
-      </div>
-    </div>
-  )
-}
-export default IndexPages
+
+      <Pagination
+        NavLink={NavLink}
+        first={first} last={last} previousUrl={previousUrl}
+       nextUrl={nextUrl} />
+        </div>
+    )
+  }
+  export default IndexPages
 
 

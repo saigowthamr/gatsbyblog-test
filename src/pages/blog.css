@@ -1,14 +1,17 @@
 .posts{
-  box-shadow:  1px 3px 2px #000000;
+      box-shadow: inset 1px -20px 0px 0px #e9ebeb;
     padding: 1rem;
     cursor: pointer;
     margin: 0 auto;
-    border: 1px solid;
-    transition: all .2s;
+    border: 1px solid darkgrey;
+    transition: all .3s;
 }
 
 .posts:hover{
+     box-shadow:none;
+     border-left: 5px solid;
+     border-right: 5px solid;
 
-    box-shadow:0 10px 10px;
 }
+
 

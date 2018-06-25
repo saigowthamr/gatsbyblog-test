@@ -4,7 +4,7 @@ import fbIcon from '../img/facebook.png'
 
 const Share = props => (
     <div>
-        <h4 style={{textAlign:"center"}}>Share Me</h4>
+        <h4 style={{textAlign:"center",margin:"0 0 .5rem 1rem",}}>Share Me</h4>
     <ul className="social">
       <li style={{ margin:"0 10px 0 0" }}>
         <a
