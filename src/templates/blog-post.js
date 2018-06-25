@@ -30,7 +30,7 @@ export default props => {
           <span>{date} </span>
           <span>{post.timeToRead} min read.</span>
         </div>
-        <div>
+        <div style={{marginBottom:"1rem"}}>
           by&nbsp;
           <a href="https://twitter.com/saigowthamr">{author}</a>
         </div>
