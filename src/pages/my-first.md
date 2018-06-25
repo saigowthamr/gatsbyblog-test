@@ -1,6 +1,6 @@
 ---
 date: '2017-08-12'
-title: Sweet Pandas Eating Sweets
+title: React js Example
 description: >-
   The Coffee Taster’s Flavor Wheel, the official resource used by coffee
   tasters, has been revised for the first time this year.
