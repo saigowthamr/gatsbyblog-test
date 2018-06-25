@@ -1,129 +1,57 @@
 import React from 'react'
-import createHistory from 'history/createBrowserHistory'
-import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
-
-
 import Image from '../components/Image'
+import MetaPost from '../components/MetaPost'
 import './blog-post.css'
+import Share from '../components/share'
 
 export default props => {
   const post = props.data.markdownRemark
+  const url = props.data.site.siteMetadata.url
+  const pathname = props.location.pathname
+  const { title, description, thumbnail, date } = post.frontmatter
   const { next, prev } = props.pathContext
+  const author = props.data.site.siteMetadata.author
+
   return (
     <div>
       <div className="main-body">
-        <Helmet
-          title={post.frontmatter.title}
-          meta={[
-            { name: 'title', content: post.frontmatter.title },
-
-            { name: 'description', content: post.frontmatter.description },
-            ,
-            {
-              property: 'og:title',
-              content: post.frontmatter.title,
-            },
-            {
-              property: 'og:url',
-              content:
-                props.data.site.siteMetadata.url + props.location.pathname,
-            },
-
-            {
-              property: 'og:image',
-              content:
-                post.frontmatter.thumbnail &&
-                props.data.site.siteMetadata.url + post.frontmatter.thumbnail,
-            },
-            {
-              property: 'og:description',
-              content: post.frontmatter.description,
-            },
-            {
-              name: 'twitter:description',
-              content: post.frontmatter.description,
-            },
-            {
-              name: 'twitter:image:src',
-              content:
-                post.frontmatter.thumbnail &&
-                props.data.site.siteMetadata.url + post.frontmatter.thumbnail,
-            },
-
-            {
-              rel: 'author',
-              href: 'https://twitter/saigowthamr',
-            },
-            { property: 'author', content: 'Sai gowtham' },
-            { property: 'og:type', content: 'article' },
-            { name: 'twitter:card', content: 'summary_large_image' },
-            {
-              property: 'article:publisher',
-              content: 'https://www.twitter.com/@saigowthamr',
-            },
-            { property: 'article:author', content: 'Sai gowtham' },
-            { name: 'robots', content: 'index, follow' },
-            {
-              property: 'article:published_time',
-              content: post.frontmatter.date,
-            },
-            { name: 'twitter:creator', content: '@saigowthamr' },
-            { property: 'og:site_name', content: 'saigowtham' },
-          ]}
+        <MetaPost
+          title={title}
+          description={description}
+          thumbnail={thumbnail}
+          date={props.date}
+          url={url}
+          pathname={pathname}
         />
-        <h1>{post.frontmatter.title}</h1>
+
+        <h1>{title}</h1>
         <div className="date-time">
-          <span>{post.frontmatter.date} </span>
+          <span>{date} </span>
           <span>{post.timeToRead} min read.</span>
         </div>
         <div>
           by&nbsp;
-          <a href="https://twitter.com/saigowthamr">
-            {props.data.site.siteMetadata.author}
-          </a>
+          <a href="https://twitter.com/saigowthamr">{author}</a>
         </div>
 
-        {post.frontmatter.thumbnail && (
-          <Image all={post.frontmatter.thumbnail} text={post.frontmatter.title.trim(5)} />
-        )}
+        {thumbnail && <Image all={thumbnail} text={title.trim(5)} />}
 
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div style={{marginTop:'1rem'}} dangerouslySetInnerHTML={{ __html: post.html }} />
 
-        <ul className="social">
-          <li style={{ marginRight: '4px' }}>
-            <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=${props.data
-                .site.siteMetadata.url + props.location.pathname}`}
-              target="blank"
-            >
-              fb
-            </a>
-          </li>
-          <li>
-            <a
-              href={`https://twitter.com/intent/tweet?url=${props.data.site
-                .siteMetadata.url + props.location.pathname}&text=${
-                post.frontmatter.title
-              } by @saigowthamr`}
-              target="blank"
-            >
-              <img src="../img/twitter.png" alt="twitter"  />
-            </a>
-          </li>
-        </ul>
+        <Share title={title} url={url} pathname={pathname} />
       </div>
 
       <ul className="pager">
         {prev && (
-          <Link to={prev.fields.slug}>
-            <li className="prev">Previous Post</li>
-          </Link>
+          <li className="prev">
+            <Link to={prev.fields.slug}>Previous Post</Link>
+          </li>
         )}
         {next && (
-          <Link to={next.fields.slug}>
-            <li className="prev">Next Post</li>
-          </Link>
+          <li className="next">
+            <Link to={next.fields.slug}>Next Post</Link>
+          </li>
         )}
       </ul>
     </div>

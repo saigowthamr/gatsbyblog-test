@@ -40,9 +40,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       createPaginatedPages({
         edges: result.data.allMarkdownRemark.edges,
         createPage: createPage,
-        pageTemplate: './src/templates/king.r.js',
+        pageTemplate: './src/templates/index.js',
         pageLength: 5,
-        pathPrefix: 'posts',
+        pathPrefix: '/',
       })
       const posts = result.data.allMarkdownRemark.edges;
 
