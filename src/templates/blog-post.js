@@ -20,7 +20,7 @@ export default props => {
           title={title}
           description={description}
           thumbnail={thumbnail}
-          date={props.date}
+          date={date}
           url={url}
           pathname={pathname}
         />
@@ -30,14 +30,14 @@ export default props => {
           <span>{date} </span>
           <span>{post.timeToRead} min read.</span>
         </div>
-        <div style={{marginBottom:"1rem"}}>
+        <div style={{ marginBottom: "1rem" }}>
           by&nbsp;
           <a href="https://twitter.com/saigowthamr">{author}</a>
         </div>
 
         {thumbnail && <Image all={thumbnail} text={title.trim(5)} />}
 
-        <div style={{marginTop:'1rem'}} dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div style={{ marginTop: '1rem' }} dangerouslySetInnerHTML={{ __html: post.html }} />
 
         <Share title={title} url={url} pathname={pathname} />
       </div>

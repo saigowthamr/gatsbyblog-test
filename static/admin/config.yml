@@ -10,7 +10,7 @@ collections:
     folder: src/pages
     create: true
     fields:
-      - { name: date, label: Date, widget: date }
+      - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
