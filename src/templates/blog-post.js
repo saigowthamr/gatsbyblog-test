@@ -9,7 +9,7 @@ export default props => {
   const post = props.data.markdownRemark
   const url = props.data.site.siteMetadata.url
   const pathname = props.location.pathname
-  const { title, description, thumbnail, date } = post.frontmatter
+  const { title, description, thumbnail, date, rawDate } = post.frontmatter
   const { next, prev } = props.pathContext
   const author = props.data.site.siteMetadata.author
 
@@ -20,7 +20,7 @@ export default props => {
           title={title}
           description={description}
           thumbnail={thumbnail}
-          date={date}
+          date={rawDate}
           url={url}
           pathname={pathname}
         />
@@ -68,6 +68,7 @@ export const query = graphql`
         description
         thumbnail
         date(formatString: "MMM Do")
+        rawDate:date
       }
     }
 
