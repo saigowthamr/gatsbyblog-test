@@ -1,5 +1,5 @@
 ---
-date: '2018-06-20'
+date: '2018-06-20T21:09:00+05:30'
 title: for in loop vs for of loop
 description: for in loop vs for of loop
 thumbnail: /img/ss.jpg
